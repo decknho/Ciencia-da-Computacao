@@ -6,9 +6,10 @@ escolhas = ''
 """Cardápio"""
 
 while True:
-    """Mensagem de erro em caso de sabor invalido"""
     sabor = input(str('Escolha o sabor (CP/AC): ')).upper()
     sabores = ''
+
+    """Mensagem de erro em caso de sabor invalido"""
     while True:
         if sabor == str('AC') or sabor == str('CP'):
             break
@@ -25,7 +26,7 @@ while True:
             print('Tamanho inválido')
             tamanho = input(str('Escolha o tamanho (P/M/G): ')).upper()
     
-
+    """Combinações de sabores"""
     if sabor == str('AC') and tamanho == str ('P'):
         sabor_ = 'Açai'
         valor = 11
