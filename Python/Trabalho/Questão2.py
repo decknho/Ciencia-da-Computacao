@@ -4,6 +4,13 @@ valor_total = 0
 escolhas = ''
 
 """Cardápio"""
+print(f'{"-" * 20}Cardápio{"-" * 20}\n'
+      f'{"-" * 48}\n'
+      ' ---| Tamanho | Cupuaçu (CP) |  Açaí (AC)  |---\n'
+      ' ---|    P    |   R$  9.00   |  R$ 11.00   |---\n'
+      ' ---|    M    |   R$ 14.00   |  R$ 16.00   |---\n'
+      ' ---|    G    |   R$ 18.00   |  R$ 20.00   |---\n'
+      f'{"-" * 48}')
 
 while True:
     sabor = input(str('Escolha o sabor (CP/AC): ')).upper()
