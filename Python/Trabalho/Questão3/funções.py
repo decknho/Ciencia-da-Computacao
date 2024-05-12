@@ -1,8 +1,4 @@
-import main
-
-
-def escolha_servico(n):
-    global servico
+def escolha_servico():
     serv = input(str('Qual é o serviço desejado? ')).upper()
     while True:
         if serv == str('DIG') or serv == str('ICO') or serv == str('IPB') or serv == str('FOT'):
@@ -17,14 +13,15 @@ def escolha_servico(n):
         print('Você escolheu Impressão Preto e Branco, tendo o valor R$0,40 por pagina!')
     if serv == str('FOT'):
         print('Você escolheu Fotocópia, tendo o valor R$0,20 por pagina!')
-    servico = serv
+    return serv
 
 
-def num_pagina(n):
-    num = input(int('Numero de paginas (MAX 20.000)? '))
-    while num <= 0 or n > 20000:
+def num_pagina():
+    num = int(input('Numero de paginas (MAX 20.000)? '))
+    while num <= 0 or num > 20000:
         print('O que você digitou é menor do que 1 ou maior que 20.000 ou não é um valor numérico!!')
-        num = input(int('Digite novamente: '))
+        num = int(input('Digite novamente: '))
+    return num
 
 
 """def servico_extra():"""
