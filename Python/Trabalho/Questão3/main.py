@@ -14,17 +14,17 @@ if servico == str('DIG'):
 elif servico == str('ICO'):
     servico_valor = float(1.0)
 elif servico == str('IPB'):
-    servico_valor = float(0,40)
+    servico_valor = float(0.40)
 elif servico == str('FOT'):
-    servico_valor = float(0,20)
+    servico_valor = float(0.20)
 paginas = funções.num_pagina() # quantidade de paginas desejadas pelo usuario e salvas numa variavel
 
 desc = 0
 if paginas >= 20 and paginas < 200:
     desc = 15
-if paginas >= 20 and paginas < 200:
+if paginas >= 200 and paginas < 2000:
     desc = 20
-if paginas >= 20 and paginas < 200:
+if paginas >= 2000 and paginas < 200000:
     desc = 25
 
 total = (servico_valor * paginas) #calculando total sem desconto
