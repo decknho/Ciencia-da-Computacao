@@ -17,11 +17,31 @@ def escolha_servico():
 
 
 def num_pagina():
-    num = int(input('Numero de paginas (MAX 20.000)? '))
+    while True:
+        try:
+            num = int(input('Numero de paginas (MAX 20.000)? '))
+            break
+        except ValueError:
+            print('Error! Digite somente numeros: ')
+            continue
     while num <= 0 or num > 20000:
-        print('O que você digitou é menor do que 1 ou maior que 20.000 ou não é um valor numérico!!')
+        print('O que você digitou é menor do que 1 ou maior que 20.000!!')
         num = int(input('Digite novamente: '))
     return num
 
 
-"""def servico_extra():"""
+def servico_extra():
+    extra = int(input('Você deseja um serviço extra?\n'
+                      '[ 1 ] Encadernação simples R$15\n'
+                      '[ 2 ] Encadernação de capa dura R$40\n'
+                      '[ 0 ] Não\n'))
+    while True:
+        if extra == 0 or extra == 1 or extra == 2:
+            break
+        extra = int(input('Erro! Digite uma opção valida: '))
+    if extra == 1:
+        return 15
+    elif extra == 2:
+        return 40
+    else:
+        return 0
