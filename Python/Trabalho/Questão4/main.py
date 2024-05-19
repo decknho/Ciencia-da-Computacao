@@ -1,12 +1,8 @@
 print('Boas vindas a livraria do Dereck Eder')
 
-livros = [{'id' : 0, 'nome' : 'Deco', 'autor' : 'Amir', 'editora' : 'MM'},
-          {'id' : 1, 'nome' : 'Eve', 'autor' : 'Satar', 'editora' : 'NN'},
-          {'id' : 2, 'nome' : 'Tifa', 'autor' : 'Sanny', 'editora' : 'SS'},
-          {'id' : 3, 'nome' : 'Amortizar', 'autor' : 'Amir', 'editora' : 'TT'},
-          {'id' : 4, 'nome' : 'Potato', 'autor' : 'EU', 'editora' : 'MM'}]
+livros = []
 id_global = 1
-def cadastrar_livro(id):
+def cadastrar_livro():
     global id_global
     livro = {'id': [id_global], 'nome' : [], 'autor' : [], 'editora' : []}
     livro['nome'] = input('Nome do livro? ')
@@ -15,54 +11,14 @@ def cadastrar_livro(id):
     livros.append(livro.copy())
 
 
-"""def consultar_livro():"""
-
-
-def remover_livro():
-    apagar = int(input('Qual ID você deseja apagar? '))
-    for item in livros:
-        if item == apagar:
-            livros.remove[apagar]
-
-    
-
-print('1 - Cadastrar livro\n'
-      '2 - Consultar livro\n' 
-      '3 - Remover livro\n'
-      '4 - Sair do programa')
-
-while True:
-    servico = int(input('Você deseja? '))
-    try:
-        if servico >= 1 and servico <= 4:
-            break
-        else:
-            print('Não existe essa opção!')
-    except ValueError:
-        print('Error, digite um numero!')
-
-"""if servico == 1:
-    cadastrar_livro(id_global)
-    id_global =+ 1"""
-if servico == 2:
-    print('1 - Consultar todos\n'
-        '2 - Consultar por id\n' 
-        '3 - Consultar por autor\n'
-        '4 - Voltar ao menu')
-    while True:
-        try:
-            consulta = int(input('Você deseja? '))
-            if consulta >= 1 and consulta <= 4:
-                break
-            else:
-                print('Não existe essa opção!')
-        except ValueError:
-            print('Error, digite um numero!')
+def consultar_livro(n):
+    consulta = n
     if consulta == 1:
         for livraria in livros:
             for chave, valor in livraria.items():
                 print(f'{chave}: {valor}')
-            print()  
+            print()
+
     if consulta == 2:
         while True:
             livro_id = ''
@@ -78,6 +34,7 @@ if servico == 2:
                 print(f"NOME: {item['nome']}")
                 print(f"AUTOR: {item['autor']}")
                 print(f"EDITORA: {item['editora']}")
+                print() # print vazio pra deixa a saida bonita
     if consulta == 3:
         autor = str(input('Nome do autor? ')).upper()
         for item in livros:
@@ -87,5 +44,57 @@ if servico == 2:
                 print(f"NOME: {item['nome']}")
                 print(f"AUTOR: {item['autor']}")
                 print(f"EDITORA: {item['editora']}")
+                print() # print vazio pra deixa a saida bonita
 
-    
+
+def remover_livro():
+    apagar = int(input('Qual ID você deseja apagar? '))
+    for item in livros:
+        if item['id'] == apagar:
+            del livros[apagar - 1]
+            print('Livro apagado com sucesso!')
+
+print('1 - Cadastrar livro\n'
+          '2 - Consultar livro\n' 
+          '3 - Remover livro\n'
+          '4 - Sair do programa')
+print()
+while True:
+    while True:
+        try:
+            servico = int(input('Você deseja qual serviço? '))
+            if servico >= 1 and servico <= 4:
+                break
+            else:
+                print('Não existe essa opção!')
+        except ValueError:
+            print('Error, digite um numero!')
+
+    if servico == 1: # condição para chamar a função "cadastra livro"
+        cadastrar_livro(id_global)
+        id_global =+ 1
+
+    if servico == 2: # condição para chamar a função "consultar livro"
+        print('1 - Consultar todos\n'
+              '2 - Consultar por id\n' 
+              '3 - Consultar por autor\n'
+              '4 - Voltar ao menu')
+        print()
+        while True:
+            try:
+                consulta = int(input('Você deseja consultar por? '))
+                if consulta >= 1 and consulta <= 4:
+                    break
+                else:
+                    print('Não existe essa opção!')
+            except ValueError:
+                print('Error, digite um numero!')
+        if consulta >= 1 and consulta < 4:
+            consultar_livro(consulta)
+
+    if servico == 3: # condição para chamar a função "remover livro"
+        remover_livro()
+
+    if servico == 4: # encerrar o programa
+        print('PROGRAMA ENCERRADO!!')
+        break
