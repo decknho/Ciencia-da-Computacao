@@ -4,7 +4,7 @@ int main() {
     int x, y;
     char op;
     
-    printf("Digite a operação desejada");
+    printf("Digite a operação desejada: ");
     scanf_s("%c", &op);
 
     printf("Digite um numero:\n");
@@ -16,20 +16,21 @@ int main() {
     switch (op)
     {
     case '+':
-        printf("%i + %i = %i\n", x, y, x + y)
+        printf("%i + %i = %i\n", x, y, x + y);
         break;
     case '-':
-        printf("%i - %i = %i\n", x, y, x - y)
+        printf("%i - %i = %i\n", x, y, x - y);
         break;
     case '*':
-        printf("%i * %i = %i\n", x, y, x * y)
+        printf("%i * %i = %i\n", x, y, x * y);
         break;
     case '/':
-        printf("%i / %i = %i\n", x, y, x / y)
+        printf("%i / %i = %i\n", x, y, x / y);
         break;
     
     default:
-    printf("Opção invalida!")
+    printf("Opção invalida!");
         break;
     }
+    return 0;
 }
