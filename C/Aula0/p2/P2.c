@@ -4,11 +4,7 @@ int main() {
     int x, y;
     char op;
     
-    printf("Você deseja?\n
-    '+' - SOMAR\n
-    '-' - SUBTRAIR\n
-    '*' - MULTIPLICAR\n
-    '/' - DIVIDIR\n");
+    printf("Digite a operação desejada");
     scanf_s("%c", &op);
 
     printf("Digite um numero:\n");
