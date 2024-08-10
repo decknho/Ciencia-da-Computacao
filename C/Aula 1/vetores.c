@@ -10,8 +10,17 @@ int main() {
     {
         posicao = i + 1;
         numero[i] = i;
-        printf_s("%i = %d\n",posicao, numero[i]);
+        printf_s("Indice: %i = Valor: %d\n",posicao, numero[i]);
     }
+
+    printf_s("Digite o indice do valor: ");
+    scanf("%d", indice);
+
+
+    printf_s("Digite o indice do valor: ");
+    scanf("%d", novovalor);
+
+    numero[indice] = novovalor;
     
     
     return 0;
