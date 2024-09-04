@@ -3,9 +3,10 @@
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
-    char str = "Pudim";
-    
-    printf_s("Nova string: %c\n", &str);
+    int sla;
+    printf("Digite uma string? \n");
+    scanf_s("%i", &sla);
+    printf("Nova string: %i", sla);
 
     return 0;
 }
