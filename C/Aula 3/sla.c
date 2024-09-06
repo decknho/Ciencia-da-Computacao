@@ -3,10 +3,11 @@
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
-    int sla;
-    printf("Digite uma string? \n");
-    scanf_s("%i", &sla);
-    printf("Nova string: %i", sla);
+
+    char nome;
+    printf_s("Nome completo:\n");
+    scanf("%s", &nome);
+    printf_s("Seu nome é %s, certo?\n", &nome);
 
     return 0;
 }
