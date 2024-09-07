@@ -13,31 +13,30 @@ int main() {
     printf("2° numero: ");
     scanf("%f", &num2);
 
-    printf("Você deseja?\n 1 - Somar\n 2 - Subtrair\n 3 - Multiplicar\n 4 - Dividir\n ");
+    printf("1 - Somar\n2 - Subtrair\n3 - Multiplicar\n4 - Dividir\nVocê deseja? ");
     scanf("%i", &operador);
 
+    printf("O resultado de: ");
     switch (operador) {
-        case  1:
-            simbolo_operador = ("+");
+        case 1:
             resultado = num1 + num2;
+            printf("%.2f + %.2f = %.2f", num1, num2, resultado);
             break;
-        case  2:
-            simbolo_operador = ("-");
+        case 2:
             resultado = num1 - num2;
+            printf("%.2f - %.2f = %.2f", num1, num2, resultado);
             break;
-        case  3:
-            simbolo_operador = ("*");
+        case 3:
             resultado = num1 * num2;
+            printf("%.2f * %.2f = %.2f", num1, num2, resultado);
             break;
         case 4:
-            simbolo_operador = ("/");
             resultado = num1 / num2;
+            printf("%.2f / %.2f = %.2f", num1, num2, resultado);
             break;
         default:
             break;
     }
-
-    printf("%f %c %f = %f",&num1, &simbolo_operador, &num2, &resultado);
 
     return 0;
 }
